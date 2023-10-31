@@ -247,7 +247,8 @@ body.dark .sidebar header .toggle{
     background-color: var(--primary-color);
 }
 .sidebar li a:hover .icon,
-.sidebar li a:hover .text{
+.sidebar li a:hover .text,
+.sidebar li a:hover .text-long{
     color: var(--sidebar-color);
 }
 body.dark .sidebar li a:hover .icon,
@@ -327,7 +328,7 @@ body.dark .switch::before{
     left: 20px;
 }
 
-.home{
+section {
     position: absolute;
     top: 0;
     top: 0;
@@ -336,19 +337,37 @@ body.dark .switch::before{
     width: calc(100% - 250px);
     background-color: var(--body-color);
     transition: var(--tran-05);
+    padding: 12px 50px;
 }
-.home .text{
+
+.tabcontent {
+    display: none;
+  }
+
+section .text{
     font-size: 30px;
     font-weight: 500;
     color: var(--text-color);
-    padding: 12px 60px;
+    margin-bottom: 2rem;
 }
 
-.sidebar.close ~ .home{
+.sidebar.close ~ section {
     left: 78px;
     height: 100vh;
     width: calc(100% - 78px);
 }
-body.dark .home .text{
+body.dark section .text{
     color: var(--text-color);
 }
+
+section#home .welcome-container {
+    background-color: #707070;
+    border-radius: 2rem;
+    height: 10rem;
+    padding: 2rem;
+}
+
+section#home .welcome-container p {
+    
+}
+
