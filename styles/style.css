@@ -41,6 +41,7 @@
     --toggle-color: #DDD;
     --text-color: #707070;
     --color-oba: #FF0000;
+    --color-oba-hover: #ff5757;
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -70,6 +71,7 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
     --color-oba: #FF0000;
+    --color-oba-hover: #ff4848;
 }
 
 /* ===== Sidebar ===== */
@@ -454,9 +456,16 @@ section#family .family-grid .grid-card button {
     border: none;
     border-radius: .5rem;
     background-color: var(--color-oba);
+    transition: var(--tran-05);
     color: #fff;
     font-size: 1rem;
     font-weight: 400;
+}
+
+section#family .family-grid .grid-card button:hover {
+    cursor: pointer;
+    transition: var(--tran-05);
+    background-color: var(--color-oba-hover);
 }
 
 section#family .family-grid .grid-card .family-card-info {
