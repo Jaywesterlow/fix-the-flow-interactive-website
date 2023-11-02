@@ -25,6 +25,7 @@ modeSwitch.addEventListener("click" , () =>{
     }
 });
 
+
 function switchTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -48,3 +49,12 @@ function standardTab() {
 document.addEventListener("DOMContentLoaded", function() {
   standardTab();
 });
+
+
+// $(window).on('resize', function() {
+//     if($(window).width() < 700) {
+//         $('#nav').addClass('close');
+//     }else{
+//         null
+//     }
+// })
