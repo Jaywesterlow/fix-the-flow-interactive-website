@@ -3,7 +3,6 @@ Ontwerp en maak een interactieve website voor een opdrachtgever.
 
 ## User Story
 > oba #28 - Mijn OBA platform profielpagina ontwerpen & ontwikkelen
-> 
 
 ## Beschrijving
 In deze sprint staat het maken van een interactieve website centraal. Voor deze opdracht kies je een user Story waarin een gebruiker iets moet doen. Als een gebruiker interactie heeft met een systeem, moet je goede feedback/feedforward ontwerpen en maken. Zo weet een gebruiker wat die kan verwachten en of de actie gelukt is.
