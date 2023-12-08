@@ -374,9 +374,41 @@ section#reservations h3 {
     outline: none;
 }
 .button {
+    height: 50px;
+    width: 80px;
+    border-radius: .4rem;
     color: #fff;
     background-color: #18191a;
     cursor: pointer;
+    position: relative;
+    transition: all .5s linear;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: visible;
+}
+
+.button::after {
+    height: 50px;
+    width: 80px;
+    border-radius: .4rem;
+    content: 'X';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    background-color: #f00;
+}
+
+.button:hover {
+    background-color: #353639;
+}
+
+.flip {
+     transform: rotateY(180deg);
 }
 
 .section-header {
@@ -388,7 +420,7 @@ section#reservations h3 {
     padding: 17px 0;
     border-radius: 20px;
     box-shadow: 4px 4px 0 rgb(255, 0, 0);
-    overflow: hidden; /* TODO: fix */
+    overflow: hidden;
 }
 
 .section-header h2 {

@@ -6,6 +6,8 @@ searchBtn = body.querySelector(".search-box"),
 darkModeCheckbox = document.getElementById("darkmode"),
 modeText = body.querySelector(".mode-text");
 
+const flip = document.querySelector(".reserve");
+
 function getCookie(name) {
     var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
     if (match) return match[2];
@@ -89,4 +91,12 @@ function standardTab() {
 
 document.addEventListener("DOMContentLoaded", function() {
   standardTab();
+});
+
+function buttonFlip() {
+    flip.classList.toggle("flip")
+}
+
+flip.addEventListener('click', () => {
+    buttonFlip();
 });
