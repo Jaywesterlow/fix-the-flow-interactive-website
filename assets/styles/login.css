@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../image/background.jpg");
+    background-image: url("../image/oba-bg.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -37,12 +37,18 @@ body {
     margin-bottom: 10px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 img {
     margin-bottom: 10px;
 }
 
 .login-button {
-    background-color: red;
+    background-color: var(--color-deepSkyBlue);
     color: white;
     padding: 10px 1.25rem;
     border: none;
@@ -51,7 +57,7 @@ img {
 }
 
 .login-button:hover {
-    background-color: #c0392b;
+    background-color: var(--color-blue);
 }
 
 .link-container {
@@ -60,7 +66,7 @@ img {
 }
 
 a {
-    color: black;
+    color: var(--text-colorDark);
 }
 
 a:hover {

@@ -6,7 +6,7 @@ searchBtn = body.querySelector(".search-box"),
 darkModeCheckbox = document.getElementById("darkmode"),
 modeText = body.querySelector(".mode-text");
 
-const flip = document.querySelector(".reserve");
+const flipButtons = document.querySelectorAll(".reserve");
 
 function getCookie(name) {
     var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -39,7 +39,6 @@ function setDarkMode(value) {
     }
 }
 
-setDarkMode(getCookie("darkmode") ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches));
 
 // check if browser color scheme is changed
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
@@ -93,10 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
   standardTab();
 });
 
-function buttonFlip() {
-    flip.classList.toggle("flip")
-}
-
-flip.addEventListener('click', () => {
-    buttonFlip();
+flipButtons.forEach(button => {
+  button.addEventListener('click', e => {
+    e.target.classList.toggle("flip")
+  })
 });

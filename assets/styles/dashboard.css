@@ -7,7 +7,7 @@ body {
 }
 
 ::selection {
-    background-color: #f00;
+    background-color: var(--primary-color);
     color: var(--sidebar-color);
 }
 
@@ -128,8 +128,8 @@ header .image-text .profession {
     transform: translateY(-50%) rotate(180deg);
     height: 25px;
     width: 25px;
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color: var(--color-deepSkyBlue);
+    color: var(--sidebar-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -180,12 +180,16 @@ header .image-text .profession {
 }
 
 .sidebar li a:hover {
-    background-color: var(--primary-color);
+    background-color: var(--color-blue);
+}
+
+.sidebar li a:active {
+    background-color: var(--color-deepSkyBlue);
 }
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text,
 .sidebar li a:hover .text-long {
-    color: #fff;
+    color: var(--sidebar-color);
 }
 
 .sidebar .menu-bar {
@@ -231,10 +235,12 @@ section .text {
 
 section#home .welcome-container {
     background-color: var(--sidebar-color);
-    border-radius: 2rem;
-    height: 30vh;
+    border-radius: 10px;
     padding: 2rem;
     margin-bottom: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 section#home .welcome-container p {
@@ -325,13 +331,11 @@ section#reservations h3 {
 .book-readinglist {
     border-radius: 10px;
     background-color: var(--sidebar-color);
-    width: 50em;
     height: 200px;
     padding: 20px;
     display: flex;
-    width: 80vw;
+    width: 100%;
     left: 10vw;
-    display: flex;
     gap: 5vw;
 }
 
@@ -354,13 +358,8 @@ section#reservations h3 {
     background-color: var(--primary-color-light);
     display: flex;
     align-items: center;
-    box-shadow: 4px 4px 0 rgb(255, 0, 0);
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.20);
     color: var(--text-color);
-}
-
-.search-box-home:has(input:focus), 
-.sidebar li.search-box:has(input:focus) {
-    outline: 1px solid red;
 }
 
 .search-box-home input {
@@ -373,12 +372,22 @@ section#reservations h3 {
     height: 56px;
     outline: none;
 }
+.button.button__leeslijst {
+    height: 35px;
+    width: 120px;
+    border-radius: .4rem;
+    color: var(--sidebar-color);
+    background-color: var(--color-deepSkyBlue);
+    cursor: pointer;
+    position: relative;
+    transition: all .5s linear;
+}
 .button {
     height: 50px;
     width: 80px;
     border-radius: .4rem;
-    color: #fff;
-    background-color: #18191a;
+    color: var(--sidebar-color);
+    background-color: var(--color-deepSkyBlue);
     cursor: pointer;
     position: relative;
     transition: all .5s linear;
@@ -400,11 +409,11 @@ section#reservations h3 {
     transform: rotateY(180deg);
     -webkit-transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
-    background-color: #f00;
+    background-color: var(--primary-color);
 }
 
 .button:hover {
-    background-color: #353639;
+    background-color: var(--color-blue);
 }
 
 .flip {
@@ -419,7 +428,7 @@ section#reservations h3 {
     background-color: var(--sidebar-color   );
     padding: 17px 0;
     border-radius: 20px;
-    box-shadow: 4px 4px 0 rgb(255, 0, 0);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.20);
     overflow: hidden;
 }
 
@@ -436,12 +445,6 @@ section#reservations h3 {
     text-align: left;
 }
 
-.oba-logo {
-    display: flex;
-    justify-content: end;
-
-}
-
 .books-row {
     margin-top: 3vh;
     width: 100%;
@@ -452,6 +455,7 @@ section#reservations h3 {
     display: flex;
     flex-direction: row;
     gap: 2.5vw;
+    width: 100%;
 }
 
 .books-row ul li {
@@ -463,6 +467,7 @@ section#reservations h3 {
     align-items: center;
     justify-content: space-between;
     height: calc(20vh + 3vw + 3vh);
+    border-radius: 10px;
 }
 
 .books-row ul li img {
@@ -509,6 +514,12 @@ section#reservations h3 {
 
 .toggle-checkbox:has(input:checked) .round {
     left: 20px;
+}
+
+@media only screen and (max-width: 1978px) {
+    .books-row ul {
+        overflow-x: hidden;
+    }
 }
 
 @media only screen and (max-width: 478px) {
@@ -570,7 +581,8 @@ section#reservations h3 {
     }
 
     .books-row {
-        display: none;
+        /* display: none; */
+        overflow-x: scroll;
     }
     
     .to-big-for-mobile {
@@ -598,7 +610,11 @@ section#depositos {
 
             & > a {
               display: inline-block;
-              color: red;
+              color: var(--color-blue);
+            }
+
+            & > a:hover {
+                color: var(--color-blue);
             }
             
             & > a::after {
@@ -607,7 +623,7 @@ section#depositos {
               height: 2px;
               display: block;
               transition: var(--tran-02);
-              background: red;
+              background: var(--color-blue);
             }
               
             & > a:hover::after {
@@ -654,7 +670,7 @@ section#depositos {
 
                 & > svg {
                     margin-left: .5rem;
-                    fill: #f00;
+                    fill: var(--color-blue);
                 }
             }
 
@@ -729,13 +745,13 @@ section#payment-history {
               }
         
               & > label.history-open:hover {
-                background-color: var(--primary-color);
-                color: var(--text-color);
+                background-color: var(--color-blue);
+                color: var(--sidebar-color);
               }
         
               & input:checked + .history-open {
-                background-color: var(--primary-color);
-                color: var(--text-color);
+                background-color: var(--color-deepSkyBlue);
+                color: var(--sidebar-color);
               }
         
               & input:checked + .history-open::after {
@@ -746,6 +762,7 @@ section#payment-history {
                 max-height: 0;
                 padding: 0 1rem;
                 background-color: var(--primary-color-light);
+                color: var(--text-color);
                 transition: all .5s ease-in-out;
               }
         
@@ -757,11 +774,12 @@ section#payment-history {
               & label.history-close {
                 padding: 1rem;
                 font-size: 0.75rem;
+                transition: .3s;
               }
               
               & label.history-close:hover {
-                background-color: var(--primary-color);
-                color: var(--text-color);
+                background-color: var(--color-blue);
+                color: var(--sidebar-color);
               }
             }
         }

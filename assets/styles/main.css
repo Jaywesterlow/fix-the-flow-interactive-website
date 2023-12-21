@@ -94,9 +94,9 @@ button a {
 }
 
 .special-text {
-    color: red;
+    color: var(--color-deepSkyBlue);
 }
 
 h1 {
-    color: red;
+    color: var(--color-deepSkyBlue);
 }
